@@ -1,19 +1,19 @@
-import { useState } from "react"
-import styles from "./Game.module.css"
-import config from "../config"
-import usePhaser from "../hooks/usePhaser"
-import { useFullscreen } from "ahooks"
+import { useState } from 'react';
+import styles from './Game.module.css';
+import config from '../config';
+import usePhaser from '../hooks/usePhaser';
+import { useFullscreen } from 'ahooks';
 
 export default function Game() {
-  const { gameContainer } = usePhaser(config)
-  const [isFullscreen, { toggleFullscreen }] = useFullscreen(gameContainer)
-  const [score, setScore] = useState(0)
+  const { gameContainer } = usePhaser(config);
+  const [isFullscreen, { toggleFullscreen }] = useFullscreen(gameContainer);
+  const [score, setScore] = useState(0);
 
   return (
     <div className={styles.game}>
       <div className={styles.gameContainer} ref={gameContainer}>
         <header>
-          <h1>Game Title</h1>
+          <h1>Kill The Big Bad</h1>
           <div className={styles.score}>{score}</div>
         </header>
         <footer>
@@ -26,5 +26,5 @@ export default function Game() {
         </footer>
       </div>
     </div>
-  )
+  );
 }
